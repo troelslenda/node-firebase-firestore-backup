@@ -27,7 +27,7 @@ module.exports = function backup ({
 
   const handleCollection = collection => {
     const parseArray = array => array.map(parseField)
-    const parseObj = obj => _.keys(obj).reduce((parsed, field) => {
+    const parseObj = obj => _.keys(obj).sort().reduce((parsed, field) => {
       parsed[field] = parseField(obj[field])
       return parsed
     }, {})
@@ -50,7 +50,7 @@ module.exports = function backup ({
     }
 
     const parseDoc = doc => {
-      return _.keys(doc.data()).reduce((parsed, key) => {
+      return _.keys(doc.data()).sort().reduce((parsed, key) => {
         parsed[key] = parseField(doc.data()[key])
         return parsed
       }, { id: doc.id })
