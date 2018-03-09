@@ -117,6 +117,6 @@ module.exports = function backup ({
           rimraf.sync(filename)
         }
         console.log('Done!')
-      })
+      }).catch(err => console.error(err))
   })
 }
