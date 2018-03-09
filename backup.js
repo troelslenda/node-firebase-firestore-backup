@@ -34,6 +34,7 @@ module.exports = function backup ({
     }, {})
 
     const parseField = field => {
+      if (field == null) { return field }
       const isRef = field => !!(field.id && field.parent && field.get)
       const isGeo = field => !!(field.latitude && field.longitude)
       const isDate = field => !!(field instanceof Date)
