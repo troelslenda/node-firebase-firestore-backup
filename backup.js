@@ -5,7 +5,8 @@ const rimraf = require('rimraf')
 
 const archiver = require('archiver')
 
-const formatDate = date => [date.getFullYear(), '-', date.getMonth() + 1, '-', date.getDate(), '_', date.getHours(), ':', date.getMinutes()].join('')
+const padZero = str => ('0' + str).slice(-2)
+const formatDate = date => [date.getFullYear(), '-', padZero(date.getMonth() + 1), '-', padZero(date.getDate()), '_', padZero(date.getHours()), '.', padZero(date.getMinutes()), '.', padZero(date.getSeconds())].join('')
 
 module.exports = function backup ({
   admin, cmd
