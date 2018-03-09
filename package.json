@@ -1,6 +1,6 @@
 {
   "name": "firebase-firestore-backup",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "Backup utility for Firebase Firestore",
   "main": "index.js",
   "scripts": {
