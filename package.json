@@ -1,7 +1,7 @@
 {
   "name": "firebase-firestore-backup",
   "version": "1.0.0",
-  "description": "A Firebase Firestore backup tool",
+  "description": "Backup utility for Firebase Firestore",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,5 +20,14 @@
   "bugs": {
     "url": "https://github.com/troelslenda/node-firebase-firestore-backup/issues"
   },
-  "homepage": "https://github.com/troelslenda/node-firebase-firestore-backup#readme"
+  "homepage": "https://github.com/troelslenda/node-firebase-firestore-backup#readme",
+  "dependencies": {
+    "archiver": "^2.1.1",
+    "commander": "^2.15.0",
+    "concat-stream": "^1.6.1",
+    "firebase-admin": "^5.10.0",
+    "lodash": "^4.17.5",
+    "rimraf": "^2.6.2",
+    "unzip": "^0.1.11"
+  }
 }
