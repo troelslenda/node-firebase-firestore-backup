@@ -22,6 +22,8 @@ module.exports = function backup ({
   const output = fs.createWriteStream(filename)
   const archive = archiver('zip', { zlib: { level: 9 } })
 
+  const bucketName = cmd.parent.bucketName
+
   archive.pipe(output)
 
   /** Get database */
@@ -108,7 +110,7 @@ module.exports = function backup ({
       })
       .then(() => {
         console.log('...zipped')
-        return storage.bucket('dripdrop-727b4-backups').upload(filename)
+        return storage.bucket(bucketName).upload(filename)
       })
       .then(() => {
         console.log('...uploaded')

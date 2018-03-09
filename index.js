@@ -25,6 +25,7 @@ const handleCmd = cmd => {
 
 commander
   .option('-C, --credentials-file <file>', 'The credentials file to use.')
+  .option('-B, --bucket-name <string>', 'The name of the bucket to upload backups')
   .option('-o, --only [collections...]', 'Only use these collections. Trumps --except.')
   .option('-e, --except [collections...]', 'Don\'t use these collections.')
 
