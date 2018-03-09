@@ -16,7 +16,7 @@
     "backup"
   ],
   "author": "Troels Lenda <troelslenda@gmail.com>",
-  "license": "ISC",
+  "license": "CC BY-SA",
   "bugs": {
     "url": "https://github.com/troelslenda/node-firebase-firestore-backup/issues"
   },
