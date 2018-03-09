@@ -23,4 +23,4 @@ Type `node index.js -h` for information on how to use the backup utility.
 ## License
 CC BY-SA
 
-This project was brought to you by [Makeable A/S](https://github.com/makeabledk) 
+This project was brought to you by [Makeable ApS](https://github.com/makeabledk) 
