@@ -55,11 +55,23 @@ module.exports = function backup ({
       return _.keys(doc.data()).sort().reduce((parsed, key) => {
         parsed[key] = parseField(doc.data()[key])
         return parsed
-      }, { id: doc.id })
+      }, { id: doc.id, collections: doc.collections })
     }
 
     return collection
       .get()
+      .then(querySnapshot => {
+        let promises = []
+        querySnapshot.docs.map(doc => {
+          doc.collections = []
+          promises.push(doc.ref.getCollections().then(cols => {
+            let promisesDocs = []
+            cols.map(col => promisesDocs.push(handleCollection(col)))
+            return Promise.all(promisesDocs).then(data => doc.collections.push(data))
+          }))
+        })
+        return Promise.all(promises).then(() => querySnapshot)
+      })
       .then(querySnapshot => {
         let docs = querySnapshot.docs.map(parseDoc).reduce((docs, doc) => {
           docs[doc.id] = _.omit(doc, 'id')
