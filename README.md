@@ -2,7 +2,9 @@
 
 > Backup and restore documents from Firebase Firestore.
 
-[![NPM Version][npm-image]][npm-url]
+
+![npm](https://img.shields.io/npm/v/firebase-firestore-backup.svg)
+[![dependencies Status](https://david-dm.org/makeabledk/node-firebase-firestore-backup/status.svg)](https://david-dm.org/makeabledk/node-firebase-firestore-backup)
 
 ## Install
 
