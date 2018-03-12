@@ -7,18 +7,33 @@
 ## Install
 
 ```bash
-npm i -S firebase-firestore-backup
+npm i -g firebase-firestore-backup
 ```
+
+## Setup
+
+serviceAccountKeyFile.json is downloaded from firebase console. The bucketName is the name of the Firebase Storage bucket you wish to upload your backups. You might need to create this manually.
 
 ## Usage
 
-In the terminal type `node index.js backup -C serviceAccountKeyFile.json -B bucketName` where serviceAccountKeyFile.json is downloaded from firebase console. The bucketName is the name of the Firebase Storage bucket you wish to upload your backups. You might need to create this manually.
+After installation a binary `firebase-firestore` is available.
 
+```
+Usage: firebase-firestore [options] [command]
 
-Type `node index.js -h` for information on how to use the backup utility.
+  Options:
 
+    -C, --credentials-file <file>  The credentials file to use.
+    -B, --bucket-name <string>     The name of the bucket to upload backups
+    -o, --only [collections...]    Only use these collections. Trumps --except.
+    -e, --except [collections...]  Don't use these collections.
+    -h, --help                     output usage information
 
+  Commands:
 
+    backup [options]
+    restore <backup.zip>
+```
 
 ## License
 CC BY-SA

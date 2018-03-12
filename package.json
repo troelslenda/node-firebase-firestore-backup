@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Backup utility for Firebase Firestore",
   "main": "index.js",
+  "bin": {
+    "firebase-firestore": "./index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
