@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/troelslenda/node-firebase-firestore-backup.git"
+    "url": "git+https://github.com/makeabledk/node-firebase-firestore-backup.git"
   },
   "keywords": [
     "firebase",
@@ -21,9 +21,9 @@
   "author": "Troels Lenda <troelslenda@gmail.com>",
   "license": "CC BY-SA",
   "bugs": {
-    "url": "https://github.com/troelslenda/node-firebase-firestore-backup/issues"
+    "url": "https://github.com/makeabledk/node-firebase-firestore-backup/issues"
   },
-  "homepage": "https://github.com/troelslenda/node-firebase-firestore-backup#readme",
+  "homepage": "https://github.com/makeabledk/node-firebase-firestore-backup#readme",
   "dependencies": {
     "archiver": "^2.1.1",
     "commander": "^2.15.0",
