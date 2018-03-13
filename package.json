@@ -29,6 +29,7 @@
     "commander": "^2.15.0",
     "concat-stream": "^1.6.1",
     "firebase-admin": "^5.10.0",
+    "fs": "0.0.1-security",
     "lodash": "^4.17.5",
     "rimraf": "^2.6.2",
     "unzip": "^0.1.11"
