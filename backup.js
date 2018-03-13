@@ -18,7 +18,7 @@ module.exports = function backup ({
   const whiteList = cmd.parent.only && cmd.parent.only.split(',')
 
   /** Create and archive files */
-  const filename = path.join(__dirname, 'backup-' + formatDate(new Date()) + '.zip')
+  const filename = path.join(__dirname, cmd.parent.prefix + '-backup-' + formatDate(new Date()) + '.zip')
   const output = fs.createWriteStream(filename)
   const archive = archiver('zip', { zlib: { level: 9 } })
 

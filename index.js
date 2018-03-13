@@ -19,14 +19,10 @@ const handleCmd = cmd => {
     process.exit(-1)
   }
 
-  let serviceAccount = ''
+
   //let serviceAccount = require(cmd.parent.credentialsFile)
-  if (cmd.parent.credentialsString) {
-    serviceAccount = cmd.parent.credentialsString
-  } else {
-    const serviceAccountBuffer = fs.readFileSync(cmd.parent.credentialsFile)
-    serviceAccount = JSON.parse(serviceAccountBuffer.toString())
-  }
+  const serviceAccountBuffer = fs.readFileSync(cmd.parent.credentialsFile)
+  let serviceAccount = JSON.parse(serviceAccountBuffer.toString())
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
   })
@@ -34,11 +30,11 @@ const handleCmd = cmd => {
 }
 
 commander
-  .option('-x, --credentials-string <string>', 'The credentials as string. Trumps --credentials-file.')
   .option('-C, --credentials-file <file>', 'The credentials file to use.')
   .option('-B, --bucket-name <string>', 'The name of the bucket to upload backups')
   .option('-o, --only [collections...]', 'Only use these collections. Trumps --except.')
   .option('-e, --except [collections...]', 'Don\'t use these collections.')
+  .option('-p, --prefix <string>', 'Prefix the backup filename.')
 
 commander
   .command('backup')
